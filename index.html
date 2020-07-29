@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const options = [
+      {
+        value: "rock",
+        losesTo: "paper",
+        beats: "scissors",
+      },
+      {
+        value: "paper",
+        losesTo: "scissors",
+        beats: "rock",
+      },
+      {
+        value: "scissors",
+        losesTo: "rock",
+        beats: "paper",
+      },
+    ];
+    function computerPlay(moves) {
+      const randomNum = Math.floor(Math.random() * moves.length);
+      return moves[randomNum].value;
+    }
+    function playRound(playerSelection, computerSelection) {
+      if (playerSelection.losesTo === computerSelection) {
+        return `You lose! ${playerSelection.value} loses to ${computerSelection}`;
+      }
+      if (playerSelection.beats === computerSelection) {
+        return `You win! ${playerSelection.value} beats ${computerSelection}`;
+      }
+    }
+    function game(moves) {
+      const score = [];
+      for (let i = 0; i < 5; i++) {
+        let computerSelection = computerPlay(moves);
+        let playerSelection = prompt();
+        if (playerSelection === computerSelection) {
+          console.log("Try again, you both chose the same thing!");
+          i--;
+          continue;
+        }
+        const player = moves.find(item => item.value === playerSelection);
+        if (player === undefined) {
+          console.log("Please choose between rock, paper or scissors!");
+          i--;
+          continue;
+        }
+        score.push(playRound(player, computerSelection));
+      }
+      return score.join(`\n`);
+    }
+    console.log(game(options));
+  </script>
+</body>
+</html>
