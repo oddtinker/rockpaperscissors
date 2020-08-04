@@ -1,0 +1,90 @@
+body {
+  margin: auto 0;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 0.8rem;
+  color: sandybrown
+}
+
+h1 {
+  font-size: 2rem;
+  color: salmon;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.radio {
+  display: inherit;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0.8rem;
+}
+
+.radio label {
+  font-size: 2rem;
+}
+
+.radio input {
+  margin-left: 1px;
+}
+
+.radio input:hover,
+button[name="submit"]:hover {
+  cursor: pointer;
+}
+
+button[name="submit"] {
+  border: 1px lightskyblue solid;
+  border-radius: 4px;
+  background-color: lightyellow;
+  width: 10rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  color: lightseagreen;
+  font-size: 1rem;
+}
+
+button[name="submit"]:hover {
+  border: 1px solid lemonchiffon;
+}
+
+button[name="submit"]:active {
+  border: 1px solid rgb(221, 212, 130);
+}
+
+.moves {  
+  color: burlywood;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.final_score {
+  color: rgb(241, 164, 62);
+  font-size: 1.1rem;
+}
+
+@media (min-width: 451px) {
+  body {
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  .moves {  
+    font-size: 1.2rem;
+  }
+  .final_score {
+    font-size: 1.4rem;
+  }
+}
